@@ -17,5 +17,5 @@ variable "public_key_path" {
 
 variable "key_name" {
   description = "Key name for SSHing into EC2"
-  default = "Gurus_merchandise"
+  default = "mykey"
 }
