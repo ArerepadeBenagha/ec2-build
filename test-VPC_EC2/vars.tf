@@ -12,7 +12,7 @@ variable "AMIS" {
 }
 variable "public_key_path" {
   description = "Enter the path to the SSH Public Key to add to AWS."
-  default = "/c/Users/louis/Documents/Github/Terraform-course-pratice"
+  default = "/c/Users/louis/Documents/Github/Terraform-course-pratice/test-VPC_EC2"
 }
 
 variable "key_name" {
