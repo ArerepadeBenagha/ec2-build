@@ -1,3 +1,3 @@
 output "app-ip" {
-  value = [aws_instance.elite-vm.*.public_ip]
+  value = [aws_instance.example.*.public_ip]
 }
