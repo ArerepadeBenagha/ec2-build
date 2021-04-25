@@ -1,7 +1,7 @@
 resource "aws_security_group" "allow-ssh-login" {
-  name        = "allow-ssh-login"
-  vpc_id      = aws_vpc.main.id
-  description = "security group that allows ssh and all egress traffic"
+  name          = "allow-ssh-login"
+  vpc_id        = aws_vpc.main.id
+  description   = "security group that allows ssh and all egress traffic"
   
   egress {
     from_port   = 0
@@ -21,4 +21,3 @@ resource "aws_security_group" "allow-ssh-login" {
     Name = "allow-ssh-login"
   }
 }
-
