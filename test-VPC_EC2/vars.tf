@@ -12,6 +12,11 @@ variable "AMIS" {
   }
 }
 
+variable "elb_name" {
+  description = "name of the elastic load balancer"
+  default     = "my-elb"
+}
+
 variable "name" {
   description = "size of ec2"
   default     = "t2.micro"
@@ -30,4 +35,24 @@ variable "path_to_private_key" {
 variable "key_name" {
   description = "Key name for SSHing into EC2"
   default = "mykeypair"
+}
+
+variable  "ssh" {
+  description = "allow ssh logins"
+  default = "allow-ssh-login"
+}
+
+variable  "securitygroup-elb" {
+  description = "security group for elastic load balancer"
+  default = "securitygrp-elb"
+}
+
+variable  "elb" {
+  description = "name for elastic load balancer"
+  default = "my-elb"
+}
+
+variable  "scale" {
+  description = "name for autoscaling group"
+  default = "scale-1"
 }
