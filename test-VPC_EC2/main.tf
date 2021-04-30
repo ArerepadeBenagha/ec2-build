@@ -145,7 +145,7 @@ resource "aws_instance" "example" {
   ami           = lookup(var.AMIS, var.AWS_REGION)
   instance_type = var.name
   count         = var.instance_count
-  key_name = aws_key_pair.mykeypair.key_name
+  key_name      = aws_key_pair.mykeypair.key_name
   tags = {
     Name  = element(var.instance_tags, count.index)
   }
