@@ -1,12 +1,12 @@
 resource "aws_s3_bucket" "terraform-state-" {
-  bucket = "terraform-state-689defi"
+  bucket = "terraform-state-745dgc"
   acl    = "private"
   versioning {
     enabled = true
   }
 }
-resource "aws_s3_bucket" "dev-infra" {
-  bucket = "my-dev-infra"
+resource "aws_s3_bucket" "elite-dev" {
+  bucket = "my-bucket-infra"
   acl    = "public-read"
   versioning {
     enabled = true
@@ -16,8 +16,12 @@ resource "aws_s3_bucket" "dev-infra" {
     Environment = "Dev"
   }
 }
-resource "aws_s3_bucket_policy" "dev-infra" {
-  bucket = aws_s3_bucket.dev-infra.id
+# resource "aws_s3_bucket" "elite-dev" {
+#   bucket = "elite-dev"
+# }
+
+resource "aws_s3_bucket_policy" "elite-dev" {
+  bucket = aws_s3_bucket.elite-dev.id
 
   # Terraform's "jsonencode" function converts a
   # Terraform expression's result to valid JSON syntax.
@@ -31,8 +35,8 @@ resource "aws_s3_bucket_policy" "dev-infra" {
         Principal = "*"
         Action    = "s3:*"
         Resource = [
-          aws_s3_bucket.dev-infra.arn,
-          "${aws_s3_bucket.dev-infra.arn}/*",
+          aws_s3_bucket.elite-dev.arn,
+          "${aws_s3_bucket.elite-dev.arn}/*",
         ]
         Condition = {
           IpAddress = {
